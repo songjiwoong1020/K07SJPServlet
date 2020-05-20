@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실명확인</title>
+    <style>
+
+        input{
+            border: 1px solid black; background-color: white;
+        }
+        input:hover{
+            background-color: #e5e5e5;
+        }
+        div{
+            padding:40px;
+        }
+    </style>
+
+    <script>
+
+        window.onload = function(){
+              "width=400px, height=400px, lefr=500, top=100, location=no, toolbar=no, menubar=no, scrollbars=yes, resizable=no "
+ 
+        }
+
+        function daum(){
+
+            var first_ = document.first;
+            
+        
+            if(first_.ju1.value == "" || first_.ju2.value == ""){
+                alert("주민등록 번호를 입력해 주세요.");
+                first_.ju1.focus();
+                return;
+            }
+            if(first_.name.value == ""){
+                alert("이름을 입력해주세요.");
+                first_.name.focus();
+                return;
+            }  
+            if(first_.ju1.value.length != 6 || first_.ju2.value.length != 7){
+                alert("주민등록 번호의 길이가 맞지 않습니다.");
+                return;
+            }
+
+            first_.submit();
+
+        }
+
+    </script>
+</head>
+<body>
+    <div>
+        <form action="./RegiStep02.html" name="first">
+            <table>
+                <tr>
+                    <td>주민번호</td>
+                    <td><input name="ju1" type="text" size="6" maxlength="6"></td>
+                    <td>-</td>
+                    <td><input name="ju2" type="text" size="7" maxlength="7"></td>
+                </tr>
+                <tr>
+                    <td></br></td>
+                </tr>
+                <tr>
+                    <td>이&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;름</td>
+                    <td colspan="3"><input name="name" type="text"></td>
+                </tr>
+                <tr>
+                    <td></br></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><input style="margin-left: 30px;" type="button" value="다  음" onclick="daum();" ></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>

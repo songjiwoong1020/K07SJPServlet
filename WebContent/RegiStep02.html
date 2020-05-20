@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+    <style>
+
+        input{
+            border: 1px solid black; background-color: white;
+        }
+        input:hover{
+            background-color: #e5e5e5;
+        }
+        div{
+            padding:40px;
+        }
+        
+
+    </style>
+
+    <script>
+
+        function daum(){
+
+        var se = document.second;
+
+
+        if(se.id.value == "" || se.pw.value == "" || se.em.value == ""){
+            alert("내용을 작성해주세요.");
+            return;
+        }
+        if(se.em.value.indexOf("@") == -1 || se.em.value.indexOf(".") == -1){
+            alert("이메일 양식을 지켜주세요.");
+            return;
+        }  
+        
+
+        se.submit();
+
+        }
+
+
+    </script>
+
+</head>
+<body>
+    <div>
+        <form action="./RegiStep03.jsp" name="second">
+            <table>
+                <tr>
+                    <td>아이디</td>
+                    <td><input name="id" type="text"></td>
+                </tr>
+                <tr>
+                    <td></br></td>
+                </tr>
+                <tr>
+                    <td>비밀번호</td>
+                    <td><input name="pw" type="password"></td>
+                </tr>
+                <tr>
+                    <td></br></td>
+                </tr>
+                <tr>
+                    <td>이메일</td>
+                    <td><input name="em" type="text"></td>
+                </tr>
+                <tr>
+                    <td></br></td>
+                </tr>
+                <tr>
+                    <td>성별</td>
+                    <td><label><input type="radio" value="남자" name="se" checked="checked">남자</label>
+                        <label><input type="radio" value="여자" name="se">여자</label></td>
+                </tr>
+                <tr>
+                    <td></br></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="이  전" onclick="history.go(-1);"></td>
+                    <td><input style="margin-left: 120px;" type="button" value="다  음" onclick="daum();"></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>
