@@ -12,6 +12,7 @@ String firstStr = "Hello JSP..!!";
 	</head>
 	
 	<body>
+	깃 테스트
 		<h2>안녕하세요? JSP..!!</h2>
 		
 		<h3><%=firstStr %></h3>
