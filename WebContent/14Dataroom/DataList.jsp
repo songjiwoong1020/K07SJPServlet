@@ -5,6 +5,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <jsp:include page="../common/boardHead.jsp" /> <!-- HTML head부분 -->
+
 <body>
 <div class="container">
 	<jsp:include page="../common/boardTop.jsp" /> <!-- 게시판 상단 -->
@@ -134,6 +135,11 @@
 	<jsp:include page="../common/boardBottom.jsp" /> <!-- 게시판 아래 -->
 </div> <!-- 컨테이너 -->
 </body>
+
+<script>
+
+</script>
+
 </html>
 
 <!-- 

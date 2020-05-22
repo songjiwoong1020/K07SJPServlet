@@ -3,9 +3,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html lang="en">
 <jsp:include page="../common/boardHead.jsp" />
+<script src="../common/jquery/jquery-3.5.1.js"></script>
 <body>
 <div class="container">
 	<jsp:include page="../common/boardTop.jsp" />
@@ -65,6 +67,17 @@
 					</tr>
 				</tbody>
 				</table>
+				<table class="table table-bordered" style="margin-left: 180px;">
+					<tr id="dat">
+						<td>댓글 작성자</td>
+						<td colspan="2">댓글 내용<button type="button" id="datButton">댓글달기</button></td>
+					</tr>
+					<tr id="testP"></tr>
+					<tr>
+						<td></td>
+						<td colspan="2"><input type="text" size="60" /><input type="submit"/></td>
+					</tr>
+				</table>
 			</div>
 			<div class="row mb-3">
 				<div class="col-6">
@@ -92,7 +105,18 @@
 	</div>
 	<jsp:include page="../common/boardBottom.jsp" />
 </div>
+
+<script>
+$(function(){
+	$('#datButton').click(function(){
+		var test = "<tr> <td></td> <td><input type='text' size='30' /><input type='submit'/></td> </tr>";
+		$('#testP').html(test);
+	});
+});
+</script>
+
 </body>
+
 </html>
 
 <!-- 
