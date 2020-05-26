@@ -67,17 +67,18 @@
 					</tr>
 				</tbody>
 				</table>
-				<table class="table table-bordered" style="margin-left: 180px;">
-					<tr id="dat">
-						<td>댓글 작성자</td>
-						<td colspan="2">댓글 내용<button type="button" id="datButton">댓글달기</button></td>
-					</tr>
-					<tr id="testP"></tr>
-					<tr>
-						<td></td>
-						<td colspan="2"><input type="text" size="60" /><input type="submit"/></td>
-					</tr>
-				</table>
+				<form name="datFrm" method="post" onsubmit="return checkValidate(this);" action="dat.do"> 
+					<table id="datTable" class="table table-bordered" style="margin-left: 180px;">
+						<tr>
+							<td>댓글 작성자</td>
+							<td colspan="2">댓글 내용<button type="button" id="datButton">댓글달기</button></td>
+						</tr>
+						<tr>
+							<td><input type="text" name="datId"/>아이디<br /><input type="text" name="datPass"/>비번</td>
+							<td colspan="2"><input type="text" size="60" name="datContent"/><input type="submit"/></td>
+						</tr>
+					</table>
+				</form>
 			</div>
 			<div class="row mb-3">
 				<div class="col-6">
@@ -109,10 +110,42 @@
 <script>
 $(function(){
 	$('#datButton').click(function(){
-		var test = "<tr> <td></td> <td><input type='text' size='30' /><input type='submit'/></td> </tr>";
-		$('#testP').html(test);
+		var test = "";
+		test += "<table id='datTable' class='table table-bordered' style='margin-left: 180px;'>";
+		test += "	<tr>";
+		test += "		<td>댓글 작성자</td>";
+		test +=	"		<td colspan='2'>댓글 내용<button type='button' id='datButton'>댓글달기</button></td>";	
+		
+		test += "	<tr> <td></td> <td><input type='text' size='30' /><input type='submit'/></td> </tr>";
+		
+		test += "	<tr>";
+		test += "		<td><input type='text' />아이디<br /><input type='text' />비번</td>";
+		test += "		<td colspan='2'><input type='text' size='60' /><input type='submit'/></td>";
+		test += "	</tr>";
+		test += "</table>";
+		
+		
+		$('#datTable').html(test);
 	});
 });
+
+function checkValidate(frm) {
+	if (frm.datId.value=="") {
+		alert("이름을 입력해주세요.");
+		frm.datId.focus();
+		return false;
+	}
+	if (frm.datPass.value=="") {
+		alert("비밀번호를 입력해주세요.");
+		frm.datPass.focus();
+		return false;
+	}
+	if (frm.datContent.value=="") {
+		alert("내용을 입력해주세요.");
+		frm.datContent.focus();
+		return false;
+	}
+}
 </script>
 
 </body>
